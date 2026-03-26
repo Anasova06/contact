@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Barcha Kontaktlar ro'yxati</p>
+
+<hr>
+
+{% for contact in contacts %}
+    <p>Name: {{ contact.name }}</p>
+    <p>Phone: {{ contact.phone }}</p>
+    <p>Created: {{ contact.created_at }}</p>
+    <p>Updated: {{ contact.updated_at }}</p>
+    <hr>
+{% empty %}
+    <p>Hozircha Kontaktlar yo'q</p>
+{% endfor %}
+
+<a href="{% url 'contact_create' %}">Yangi kontakt qo'shish</a><br>
+<a href="{% url 'home' %}">Back to Home</a>
+<hr>
+</body>
+</html>
